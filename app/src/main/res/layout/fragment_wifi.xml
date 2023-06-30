@@ -1,0 +1,118 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="connectionStatus" type="com.bchoi.signalstrengthspike.entities.ConnectionStatus" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context="com.bchoi.signalstrengthspike.fragments.WifiFragment">
+        <TextView
+            android:id="@+id/current_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_network"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#6a6a6a"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/label_name"
+            android:textAppearance="@style/labelText"
+            app:layout_constraintTop_toBottomOf="@id/current_network"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{connectionStatus.name}"
+            app:layout_constraintTop_toTopOf="@id/label_name"
+            app:layout_constraintStart_toEndOf="@id/label_name" />
+        <TextView
+            android:id="@+id/label_signal_level"
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_signal_level"
+            android:textAppearance="@style/labelText"
+            app:layout_constraintTop_toBottomOf="@id/label_name"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/signal_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(connectionStatus.signalLevel)}"
+            app:layout_constraintTop_toTopOf="@id/label_signal_level"
+            app:layout_constraintStart_toEndOf="@id/label_signal_level" />
+        <TextView
+            android:id="@+id/label_bssid"
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_bssid"
+            android:textAppearance="@style/labelText"
+            app:layout_constraintTop_toBottomOf="@id/label_signal_level"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/bssid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{connectionStatus.bssid}"
+            app:layout_constraintTop_toTopOf="@id/label_bssid"
+            app:layout_constraintStart_toEndOf="@id/label_bssid" />
+        <TextView
+            android:id="@+id/label_frequency"
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_frequency"
+            android:textAppearance="@style/labelText"
+            app:layout_constraintTop_toBottomOf="@id/label_bssid"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(connectionStatus.frequency)}"
+            app:layout_constraintTop_toTopOf="@id/label_frequency"
+            app:layout_constraintStart_toEndOf="@id/label_frequency" />
+        <TextView
+            android:id="@+id/label_dbm"
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_dbm"
+            android:textAppearance="@style/labelText"
+            app:layout_constraintTop_toBottomOf="@id/label_frequency"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/dbm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(connectionStatus.dbm)}"
+            app:layout_constraintTop_toTopOf="@id/label_dbm"
+            app:layout_constraintStart_toEndOf="@id/label_dbm" />
+        <TextView
+            android:id="@+id/wifi_scan_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/wifi_scan_result"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#6a6a6a"
+            app:layout_constraintTop_toBottomOf="@id/label_dbm"
+            app:layout_constraintStart_toStartOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/wifi_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/wifi_scan_result"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

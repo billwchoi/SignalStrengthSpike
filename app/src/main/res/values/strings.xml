@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SignalStrengthSpike</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_name">Name:</string>
+    <string name="label_signal_level">Signal Level:</string>
+    <string name="label_bssid">BSSID:</string>
+    <string name="label_frequency">Frequency:</string>
+    <string name="label_dbm">DBM:</string>
+    <string name="current_network">Current Network</string>
+    <string name="wifi_scan_result">Wifi Scan Result</string>
+</resources>

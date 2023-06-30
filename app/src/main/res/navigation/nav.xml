@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.bchoi.signalstrengthspike.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_wifiFragment"
+            app:destination="@id/wifiFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_cellularFragment"
+            app:destination="@id/cellularFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wifiFragment"
+        android:name="com.bchoi.signalstrengthspike.fragments.WifiFragment"
+        android:label="fragment_wifi"
+        tools:layout="@layout/fragment_wifi" />
+    <fragment
+        android:id="@+id/cellularFragment"
+        android:name="com.bchoi.signalstrengthspike.fragments.CellularFragment"
+        android:label="fragment_cellular"
+        tools:layout="@layout/fragment_cellular" />
+</navigation>
